@@ -11,11 +11,13 @@ fi
 
 state=$(xinput list-props $id | awk '/Device Enabled/{print $4}')
 
-if [ $state -eq 1 ]
+if [ $state -ne 0 ]
 then
 	echo "Touchpad disabled"
+	state=0
 else
 	echo "Touchpad enabled"
+	state=1
 fi
 
-xinput set-prop $id 'Device Enabled' $((($state + 1) % 2))
+xinput set-prop $id 'Device Enabled' $state
