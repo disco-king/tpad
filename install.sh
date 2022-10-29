@@ -7,7 +7,7 @@ then
 	exit 1
 fi
 
-if { [ $1 == "-h" ] || [ $1 == "help" ]; } 
+if { [ $1 == "-h" ] || [ $1 == "--help" ] || [ $1 == "help" ]; } 
 then
 	echo "This script creates \"tpad\" alias in ~/.bash_aliases"
 	echo "run \"install.sh here\" to save this location of tpad.sh"
